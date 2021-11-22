@@ -52,7 +52,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Collision with untagged object: " + gameObject.name);
+            // Or anything not tagged "Ground" or "Obstacle."
+            Debug.Log("Collision with untagged object: " + collision.gameObject.name);
         }
     }
 }
