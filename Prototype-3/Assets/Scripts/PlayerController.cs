@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Jump when spacebar is pressed.
-        if (isOnGround && Input.GetKeyDown(KeyCode.Space))
+        if (isOnGround && !gameOver && Input.GetKeyDown(KeyCode.Space))
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             playerAnim.SetTrigger("Jump_trig");
