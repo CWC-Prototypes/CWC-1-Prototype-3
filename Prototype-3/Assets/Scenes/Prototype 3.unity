@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!198 &44164558 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9125212449759046732, guid: cb7cd9b0c56a24d49a40784bd3203ae6, type: 3}
+  m_PrefabInstance: {fileID: 337135406}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityModifier: 1
   jumpForce: 10
+  explosionParticle: {fileID: 44164558}
   isOnGround: 1
   gameOver: 0
 --- !u!65 &258007525
