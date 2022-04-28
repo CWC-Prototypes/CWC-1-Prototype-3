@@ -6,6 +6,7 @@ public class MoveLeft : MonoBehaviour
 {
     public float speed = 10;
 
+    private bool cleared = false;   // Obstacle has been cleared (and scored).
     private float leftBound = -15;
     private GameObject player;
     private PlayerController playerController;
@@ -29,11 +30,12 @@ public class MoveLeft : MonoBehaviour
 
         if (gameObject.CompareTag("Obstacle"))
         {
-            if (transform.position.x < player.transform.position.x)
+            if (transform.position.x < player.transform.position.x && !cleared)
             {
                 // Player has cleared obstacle.
                 // XXX - may need to calculate based on the size of the Player and obstacle colliders.
                 scoreManager.score++;
+                cleared = true;
             }
             if (transform.position.x < leftBound)
             {
