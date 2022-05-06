@@ -17,7 +17,7 @@ public class MoveLeft : MonoBehaviour
     {
         player = GameObject.Find("Player");
         playerController = player.GetComponent<PlayerController>();
-        scoreManager = player.GetComponent<ScoreManager>();
+        scoreManager = GameObject.Find("Game Manager").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
