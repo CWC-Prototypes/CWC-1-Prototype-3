@@ -26,6 +26,13 @@ public class PlayerController : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
 
+        // Tune game behavior
+        // 
+        // Player animations.
+        playerAnim.applyRootMotion = false;         // Stop forward motion on jumps.
+        playerAnim.SetInteger("DeathType_int", 1);  // Select death animation.
+
+        // Physics system.
         Physics.gravity *= gravityModifier;
 
         // A little hop to signal that we're ready to go.
@@ -63,7 +70,6 @@ public class PlayerController : MonoBehaviour
             gameOver = true;
 
             playerAnim.SetBool("Death_b", true);
-            playerAnim.SetInteger("DeathType_int", 1);
 
             dirtParticle.Stop();
             playerAudio.PlayOneShot(crashSound, 1.0f);
